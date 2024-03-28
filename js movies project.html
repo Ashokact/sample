@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movieteam</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body{
+            font-family: sans-serif;
+            background-color: rgb(0, 0, 0);  
+            color: white; 
+        }
+        .navlist{
+            background-image: linear-gradient(to bottom  left,black,red);
+            height: 75px;
+        }
+        .navcontent{
+            display: flex;
+            justify-content: space-between;
+        }
+        .navfrs{
+            padding: 45px;
+            padding-top: 25px;
+        }
+        .paddi{
+            padding: 7px;
+            background-color:rgba(246, 246, 248,0.7) ;
+            border-radius: 5px;
+        }
+        .navsec{
+            padding-top: 20px;   
+        }
+        .navtext{
+            width: 10cm;
+            margin-right: 8cm;
+            height: 0.70cm;
+            border-radius: 8px;
+            border-style: double;
+            border-color: white;
+        }
+        .navthir{
+            padding: 25px;
+        }
+        .endnav{
+            background-color: rgba(246, 246, 248,0.7);
+            padding: 7px;
+            border-radius: 5px;
+        }
+        .slider{
+            overflow: hidden;
+        }
+        .slide{
+            display: flex; 
+            position: relative; 
+            overflow: hidden;
+            justify-content: space-between;
+            animation: animate 10s linear;
+            animation-iteration-count: infinite;
+            width: calc(100px * 18);
+        }
+        @keyframes animate{
+            0%{transform: translatex(0);}
+            100%{transform: translatex(-500px);}
+        }
+        .img{
+            padding: 10px;
+            margin: 10px;
+            box-shadow: 0 0 10px rgba(236, 236, 236, 0.5);
+            width: 400px;
+            display: grid;
+           
+        }
+
+        .img img{
+            width: 100%; 
+            height: auto;   
+        }
+        .img:hover{
+         box-shadow: 5px 5px 10px rgb(236, 225, 225);  
+       }
+       .secmvlist{
+        overflow:hidden;
+        margin-top: 2cm;
+        justify-content:space-between;
+       }
+       .movieslist{
+        margin: 0%;
+        padding: 0%;
+       }
+       .secmvcon{
+        display: flex;
+        flex-wrap: wrap;
+        align-content: space-between;
+        position:relative;
+        animation: movies 5s linear;
+        animation-iteration-count: infinite;
+
+       }
+       .flexstep{
+        padding: 5px;
+        margin: 5px;
+        width: 10%;
+        
+       }
+       .flexstep img{
+        width: 100%;
+        
+       }
+       .flexstep:hover{
+        box-shadow: 0 0 10px rgb(58, 35, 35);
+       }
+       .sale{
+        background-color:rgba(243, 10, 10, 0.9);
+        width: 1.50cm;
+        border-radius: 3px;
+        text-align: center;
+       }
+       .animemaincon{
+        height: 2.57cm;
+        background-image: radial-gradient(black ,red);
+        justify-content: center;
+       }
+       .animemake{
+        font-weight:900;
+        font-size:500%;
+        text-align: center;
+        margin-top: -30px;
+        height: 2.57cm;
+        animation: smallanime 1s infinite;
+        background-color: radial-gradient(black ,red);
+        text-transform: uppercase;
+        text-shadow: 2px 3px 5px;
+       }
+
+       @keyframes smallanime{
+        0%   { background-color: black; color: rgb(255, 0, 0);}
+        50%  {background-color: red; color: rgb(0, 0, 0);}
+        100%  {background-color: black; color: rgb(255, 0, 0);}
+       }
+       .lastmaincon{
+          background-color: rgb(19, 18, 18);
+          color: white;  
+          height: 280px;
+          padding-top: 80px;
+       }
+       .condvfrt{
+        display: flex;
+        justify-content:center;
+       }
+       .condvfrt h4{
+        padding: 0px 15px;
+       }
+
+       .condvsec{
+        display: flex;
+         justify-content:center;
+       }
+       .condvsec p{
+        padding: 0px 15px;
+       }
+       .condvthd{
+        display: flex;
+         justify-content:center;
+       }
+       .condvthd p{
+        padding: 0px 15px;
+       }
+       .condvfr{
+        display: flex;
+         justify-content:center;
+       }
+       .condvfv{
+        display: flex;
+         justify-content:center;
+       }
+       .pmcmain{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-color: rgb(6, 2, 63);
+       }
+       .pmccon{
+        display: flex;
+        overflow: hidden;
+       }
+       .pmcimcon{
+        padding: 5px;
+       }
+       .scrollpmc{
+        display: flex;
+        overflow: auto;
+        justify-content: left;
+        scroll-behavior: smooth;
+        position: relative;
+       }
+       .scrollpmc::-webkit-scrollbar{
+        -webkit-appearance: none;
+       }
+       .btmvcon{
+        outline: auto;
+        border: none;
+        cursor: pointer;
+       }
+    </style>
+</head>
+<body>
+    <div class="navlist">
+    <nav class="navcontent">
+        <div class="navfrs">
+            <a class="paddi" href="#" target="_blank">Home</a>
+            <a class="paddi" href="#" target="_blank">My Movies</a>
+            <a class="paddi" href="#" target="_blank">Hollywood</a>
+            <a class="paddi" href="#" target="_blank">Categories</a>
+        </div>
+        <div class="navsec">
+             <form class="example" action="/action_page.php">
+                <input class="navtext" placeholder="Search.." name="search">
+            </form>
+        </div>
+        <div class="navthir">
+           <a class="endnav" href="" target="_blank">Sing in</a> 
+        </div>
+    </nav>
+    </div>
+    <hr>
+    <div class="slider">
+        <div class="slide">
+            <div class="img"><img src="https://static0.srcdn.com/wordpress/wp-content/uploads/2023/05/the-godfather-poster.jpeg" alt=""></div>
+            <div class="img"><img src="https://images.moviesanywhere.com/bd47f9b7d090170d79b3085804075d41/c6140695-a35f-46e2-adb7-45ed829fc0c0.jpg" alt=""></div>
+            <div class="img"><img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_3840/56e62a85810737.5d877a1753cd8.jpg" alt="" ></div>
+            <div class="img"><img src="https://m.media-amazon.com/images/S/pv-target-images/f5faf49c6612aaef51a7112f9dbbacf2ced1963f219c91e789fcfc75f2c4cffe.jpg" alt=""></div>
+            <div class="img"><img src="https://m.media-amazon.com/images/S/pv-target-images/ffc61a5a3e4dba5418ff1f9216395ab4953fe49969983b09ec4a528ced5b2879.jpg" alt=""></div>
+            <div class="img"><img src="https://m.media-amazon.com/images/S/pv-target-images/786f0f967ccf0d18d5120629a149a2fe0df94a38dba7f5b89309c8b6ac29755b.jpg" alt=""></div>
+            <div class="img"><img src="https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg" alt=""></div>
+            <div class="img"><img src="https://m.media-amazon.com/images/M/MV5BZGFjOTRiYjgtYjEzMS00ZjQ2LTkzY2YtOGQ0NDI2NTVjOGFmXkEyXkFqcGdeQXVyNDQ5MDYzMTk@._V1_.jpg" alt=""></div>
+        </div>
+    </div>
+    <hr>
+    <div class="secmvlist">
+        <h4 class="movieslist">movies</h4>
+        <div class="secmvcon">
+            <div class="flexstep">
+                <img src="https://images.moviesanywhere.com/45bc0ec075bfc0b4d8f184a7cc5bf993/876ed805-83b1-4387-b0d0-62d08c36536d.webp?h=375&resize=fit&w=250" alt="">
+                <h4 class="sale">SALE</h4>
+                <span class="price">$4.99</span>
+            </div> 
+            <div class="flexstep">
+                <img src="https://images.moviesanywhere.com/2a9f634d6fae2a773ccdd5beb15ec50c/48b5d872-e4ca-42d0-bd44-4c3f3f6dd9a9.webp?h=375&resize=fit&w=250" alt="">
+                <h4 class="sale">SALE</h4>
+                <span class="price">$4.99</span>
+            </div>
+             <div class="flexstep">
+                <img src="https://images.moviesanywhere.com/b76fc9e3b92ccd621e38756b80b89528/f32dd1eb-6b2a-4fce-b2b7-eeba488c2f12.webp?h=375&resize=fit&w=250" alt="">
+                <h4 class="sale">SALE</h4>
+                <span  class="price">$4.99</span>
+            </div> 
+            <div class="flexstep">
+                <img src="https://images.moviesanywhere.com/a22fce9620aa3a14ba64cdd13efb4ad2/ba6cfa76-ea0e-4529-be3b-0b6610141e08.webp?h=375&resize=fit&w=250" alt="">
+                <h4 class="sale">SALE</h4>
+                <span  class="price">$4.99</span>
+            </div>
+             <div class="flexstep">
+                <img src="https://images.moviesanywhere.com/607cde33edb94043a969a6594c536c82/474bedac-a2cc-466c-8133-aaadefece01f.webp?h=375&resize=fit&w=250" alt="">
+                <h4 class="sale">SALE</h4>
+                <span  class="price">$4.99</span>
+            </div>
+             <div class="flexstep">
+                <img src="https://images.moviesanywhere.com/98e821ae89ec2bd0b0f2132c725b52e8/1d652c2a-e9d2-44e9-a7bd-bf7e18b3ae26.webp?h=375&resize=fit&w=250" alt="">
+                <h4 class="sale">SALE</h4>
+                <span  class="price">$4.99</span>
+            </div> 
+            <div class="flexstep">
+                <img src="https://images.moviesanywhere.com/a862841349826ef80de773ef08204ee8/b5f3ccba-aa0d-4aac-89bf-04a9c5285ecb.webp?h=375&resize=fit&w=250" alt="">
+                <h4 class="sale">SALE</h4>
+                <span  class="price">$4.99</span>
+            </div> 
+            <div class="flexstep">
+                <img src="https://images.moviesanywhere.com/4ba38824925e41bbc9a3c0d9f68cc3ba/7b248692-f45c-4e4d-83b5-8a733acfa261.webp?h=375&resize=fit&w=250" alt="">
+                <h4 class="sale">SALE</h4>
+                <span  class="price">$4.99</span>
+            </div> 
+            <div class="flexstep">
+                <img src="https://images.moviesanywhere.com/e7d5878961af1474bcb92d91d2bb8126/83898f35-23ed-4101-8414-e821be31b7f0.webp?h=375&resize=fit&w=250" alt="">
+                <h4 class="sale">SALE</h4>
+                <span  class="price">$4.99</span>
+            </div> 
+            <div class="flexstep">
+                <img src="https://images.moviesanywhere.com/4a446a7cd94076184377cb70db4eddf8/a465aaf1-20d3-432e-bb1f-0ca4b7569ad2.webp?h=375&resize=fit&w=250" alt="">
+                <h4 class="sale">SALE</h4>
+                <span  class="price">$4.99</span>
+            </div>
+             <div class="flexstep">
+                <img src="https://images.moviesanywhere.com/5769ad1dc28cdb75dcd29f77bd5d845b/b4fc0f77-0926-4658-b08b-76cfc944c1d1.webp?h=375&resize=fit&w=250" alt="">
+                <h4 class="sale">SALE</h4>
+                <span  class="price">$4.99</span>
+            </div> 
+            <div class="flexstep">
+                <img src="https://images.moviesanywhere.com/76b350b4ef5feb1d088a66026e81fd62/a5c48966-bd16-4430-94ab-f93c07921e5e.webp?h=375&resize=fit&w=250" alt="">
+                <h4 class="sale">SALE</h4>
+                <span class="price">$4.99</span>
+            </div>
+             <div class="flexstep">
+                <img src="https://images.moviesanywhere.com/e825cfe6ccdc545ed87424b315fd886c/688bf29b-354c-4287-8806-2cd1a5c2d25d.webp?h=375&resize=fit&w=250" alt="">
+                <h4 class="sale">SALE</h4>
+                <span class="price">$4.99</span>
+            </div> 
+            <div class="flexstep">
+                <img src="https://images.moviesanywhere.com/9b35df8976accd80a0e83d5eaed10d21/e1981db8-9312-4259-8769-b800f0ef1e1b.webp?h=375&resize=fit&w=250" alt="">
+                <h4 class="sale">SALE</h4>
+                <span class="price">$4.99</span>
+            </div> 
+            <div class="flexstep">
+                <img src="https://images.moviesanywhere.com/56bfbdc90b6bb07aa3247a4110407a90/5097ed32-4d33-4417-a8a9-c166021b10a4.webp?h=375&resize=fit&w=250" alt="">
+                <h4 class="sale">SALE</h4>
+                <span class="price">$4.99</span>
+            </div> 
+            <div class="flexstep">
+                <img src="https://images.moviesanywhere.com/9c2133d9705fac2d50a5c7319eb981bf/264253ef-2dc4-492e-85ac-a4ba78904ead.webp?h=375&resize=fit&w=250
+                " alt="">
+                <h4 class="sale">SALE</h4>
+                <span class="price">$4.99</span>
+            </div> 
+        </div>
+    </div>
+    <hr><br><br>
+    <div class="animemaincon">
+                <p class="animemake">Movieteam</p>
+    </div><br>
+    <hr>
+    <div class="pmcmain">
+        <div>
+            <button class="btmvcon" onclick="scrollr()"><i class="fas fa-angle-double-left"></i></button>
+        </div>
+        <div class="pmccon">
+            <div class="scrollpmc">
+            <div class="pmcimcon">
+                <img src="https://images.moviesanywhere.com/0d8377c42ac83b8ba06854f457e50604/009afde4-1fd0-409e-8db6-7a04e0f1b62d.webp?h=250&resize=fit&w=250" alt="">
+            </div>
+             <div class="pmcimcon">
+                <img src="https://images.moviesanywhere.com/330e62e0b937a1e72a2a902ebdf63f52/9d02485c-6e5d-44ae-8de9-a12bce828d63.webp?h=250&resize=fit&w=250" alt="">
+            </div>
+             <div  class="pmcimcon">
+                <img src="https://images.moviesanywhere.com/03e036152da1354edfb5e01476470534/795252df-0c05-4ebc-97cf-99cdbbbe91c1.webp?h=250&resize=fit&w=250" alt="">
+            </div>
+             <div  class="pmcimcon">
+                <img src="https://images.moviesanywhere.com/ff91deed2e0897f401d4f2c599325bf9/6fe525d7-e632-4088-a0ef-ed473ed492fd.webp?h=250&resize=fit&w=250" alt="">
+            </div>
+             <div  class="pmcimcon">
+                <img src="https://images.moviesanywhere.com/ca6c11b19d4b0d444a4dc526787fdbbe/4550e7d5-5dab-48b0-8c91-a1b7ec41088f.webp?h=250&resize=fit&w=250" alt="">
+            </div>
+             <div class="pmcimcon">
+                <img src="https://images.moviesanywhere.com/7f3c3927961afe90a028ebc47e2c71fe/bd0a16f2-0041-4668-bb4b-c81807f9d14c.webp?h=250&resize=fit&w=250" alt="">
+            </div>
+             <div class="pmcimcon">
+                <img src="https://images.moviesanywhere.com/932abdf6b18ad06dae7bdac2a94f9006/2979ba97-5d26-48e1-bfe7-e5bbdff219f5.webp?h=250&resize=fit&w=250" alt="">
+            </div>
+             <div class="pmcimcon">
+                <img src="https://images.moviesanywhere.com/3fd242b66500d7b6e70dab55235ea009/0edb5f2f-8b92-4309-9f1a-4237fdc6b461.webp?h=250&resize=fit&w=250" alt="">
+            </div>
+             <div class="pmcimcon">
+                <img src="https://images.moviesanywhere.com/74a5a09ea78e4e28416fe5f01915437c/ba9b4ef4-6505-4c80-a08c-e63e95993ec0.webp?h=250&resize=fit&w=250" alt="">
+            </div>
+             <div class="pmcimcon">
+                <img src="https://images.moviesanywhere.com/0c43bfce2e4b3c658bb26bfabf0926a1/9558e510-c2d8-46a7-bf16-c2b7b143359b.webp?h=250&resize=fit&w=250" alt="">
+            </div>
+             </div>
+        </div>
+        <div>
+            <button class="btmvcon" onclick="scrollr()"><i class="fa-solid fa-angles-right"></i></button>
+        </div>
+    </div>
+    <hr>
+    <div class="lastmaincon">
+        <div class="lastdvcon">
+            <div class="condvfrt">
+                <h4>Home</h4>
+                <h4>Redeem</h4>
+                <h4>My Movies</h4>
+            </div>
+            <div class="condvsec">
+                <p>Help center & contact Us</p>
+                <p>legal Notices</p>
+                <p>Privacy Policy</p>
+                <p>Terms of use</p>
+                <p>activete Your Device</p>
+            </div>
+            <div class="condvthd">
+                <p>Interest-Based Ads</p>
+                <p>Your California Privacy Rights</p>
+                <p>Do Not Sell My Personal Information</p>
+                <p>Closed Captioning Inquiries</p>
+            </div>
+            <div class="condvfr">
+                <h4>© 2024 Movies Anywhere. All Rights Reserved.</h4>
+            </div>
+            <div class="condvfv">
+                <P>Movieteam</P>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function scrolll(){
+        var left=document.querySelector(".scrollpmc");
+           left.scrollBy(350, 0)
+    }
+    function scrollr(){
+        var right=document.querySelector(".scrollpmc");
+         right.scrollBy(-350, 0)
+    }
+</script>
+</html>
